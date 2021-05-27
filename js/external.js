@@ -23,9 +23,15 @@ alert("The price for the movies is: " + (3+5+1) * 3);
 
 alert("I got paid " + ((350*10) + (400*6) + (380*4)));*/
 
-var full = confirm("Is this class full?");
+/*var full = confirm("Is this class full?");
 var conflict = confirm("Does this conflict with your schedule?");
-alert("Enrollment Status " + (!full && !conflict));
+alert("Enrollment Status " + (!full && !conflict));*/
+
+var premium = confirm("Are you a premium member?");
+var quantity = confirm("Are you buying 2 or more items?");
+var offer = confirm("Has the offer expired?");
+
+alert("Offer Status " + (!offer && (quantity || premium)));
 
 
 
