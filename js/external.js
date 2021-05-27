@@ -27,14 +27,24 @@ alert("I got paid " + ((350*10) + (400*6) + (380*4)));*/
 var conflict = confirm("Does this conflict with your schedule?");
 alert("Enrollment Status " + (!full && !conflict));*/
 
-var premium = confirm("Are you a premium member?");
+/*var premium = confirm("Are you a premium member?");
 var quantity = confirm("Are you buying 2 or more items?");
 var offer = confirm("Has the offer expired?");
 
-alert("Offer Status " + (!offer && (quantity || premium)));
+alert("Offer Status " + (!offer && (quantity || premium)));*/
 
+var username = 'codeup';
+var password = 'notastrongpassword';
 
+var pwd_five_chars = password.length >= 5;
+var pwd_not_include_username = !password.includes("username");
+var user_less_than_20 = username.length <= 20;
+var no_white_space = password === password.trim() && username === username.trim();
 
+console.log(pwd_five_chars);
+console.log(pwd_not_include_username);
+console.log(user_less_than_20);
+console.log(no_white_space);
 
 
 
