@@ -46,7 +46,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(number){
-    if(number / 2 == 1){
+    if(number === 2){
         return true
     } else{
         return false
@@ -73,7 +73,8 @@ console.log(calculateTip (.20, 43.57).toFixed(2));
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
- */
+ **/
+
  var billTotal = prompt("How much is your bill total?")
  var tipPercent = prompt("How much would you like to tip?")
 
