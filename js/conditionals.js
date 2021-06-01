@@ -169,3 +169,24 @@ alert("Your price after discount is " + calculateTotal(luckyNumber, totalBill).t
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var answer = confirm("Would you like to enter a number?");
+if (answer) {
+    var number = prompt("Enter a number");
+    if (isNaN(number)) {
+        alert("You didn't enter a number.");
+    } else {
+        number = parseFloat(number);
+        if (number % 2 === 0) {
+            alert("Your number is even.");
+        } else {
+            alert("Your number is odd.");
+        }
+        alert("100 + your number is : " + Number(number + 100));
+        if (number < 0) {
+            alert("Your number is negative.");
+        } else {
+            alert("Your number is positive.");
+        }
+    }
+
+}
