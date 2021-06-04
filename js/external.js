@@ -9,7 +9,7 @@ var response = prompt("What is your favorite color?")
 
 alert("Great, " + response + " is my favorite color too!");
 
- var confirmed = confirm("Are you of serious right now?");
+var confirmed = confirm("Are you of serious right now?");
 console.log(confirmed);
 
 var price = 3
@@ -25,9 +25,9 @@ alert("I got paid " + ((350*10) + (400*6) + (380*4)));
 
 var full = confirm("Is this class full?");
 var conflict = confirm("Does this conflict with your schedule?");
-alert("Enrollment Status " + (!full && !conflict));*/
+alert("Enrollment Status " + (!full && !conflict));
 
-*var premium = confirm("Are you a premium member?");
+var premium = confirm("Are you a premium member?");
 var quantity = confirm("Are you buying 2 or more items?");
 var offer = confirm("Has the offer expired?");
 
