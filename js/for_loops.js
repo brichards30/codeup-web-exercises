@@ -4,10 +4,10 @@ function showMultiplicationTable(x,y) {
         console.log(x + " x " + y + " = " + (x * y) + "\n");
     }
 }
-showMultiplicationTable(7);
+showMultiplicationTable(6);
 // Exercise 3
 for (x = 0; x <10; x++) {
-    let x = Math.ceil(Math.random() * 100) + 10;
+    let x = Math.ceil(Math.random() * 100) + 10; //IMPORTANT
     if (x % 2 === 0) {
         console.log(x + " is even");
     } else{
@@ -17,7 +17,7 @@ for (x = 0; x <10; x++) {
 
 //E4
 
-    for (let x = 1; x < 10; x++) {
+ for (let x = 1; x < 10; x++) {
         var number = "";
         number = x;
         for (let y = 1; y < x; y++){
@@ -25,15 +25,13 @@ for (x = 0; x <10; x++) {
         }
         console.log(number.toString());
     }
-    /* for (let i = 1; i < 6; i++) {
-        var branches = "";
-        branches = i;
-        for (let k = 1; k < i; k++) {
-            branches = branches + i.toString();
-        }
-        console.log(branches.toString());
+
+ /*Katheleen's method
+    for (var index = 1, number = ""; index < 10; index++) {
+        number += "1";
+        console.log(index * number)
     }
-     */
+*/
 
 //E5
 for (let x = 100; x > 0; x = x - 5) {
