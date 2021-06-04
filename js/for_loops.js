@@ -34,6 +34,6 @@ for (x = 0; x <10; x++) {
 */
 
 //E5
-for (let x = 100; x > 0; x = x - 5) {
+for (let x = 100; x > 0; x -= 5) {
     console.log(x);
 }
