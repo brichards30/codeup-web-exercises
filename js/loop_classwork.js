@@ -52,7 +52,7 @@ while (true) {
 
 }
 
-for (var i = 1; i < 100; i++) {
+for (var i = prompt("Input an odd number"); i < 100; i++) {
     if (i % 2 !== 0) {
         //number isnt even
         //odd numbers
