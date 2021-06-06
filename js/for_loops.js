@@ -5,6 +5,7 @@ function showMultiplicationTable(x,y) {
     }
 }
 showMultiplicationTable(6);
+
 // Exercise 3
 for (x = 0; x <10; x++) {
     let x = Math.ceil(Math.random() * 100) + 10; //IMPORTANT
@@ -15,7 +16,7 @@ for (x = 0; x <10; x++) {
     }
 }
 
-//E4
+//Exercise 4
 
  for (let x = 1; x < 10; x++) {
         var number = "";
@@ -26,7 +27,7 @@ for (x = 0; x <10; x++) {
         console.log(number.toString());
     }
 
- /*Katheleen's method
+ /*Shorter method
     for (var index = 1, number = ""; index < 10; index++) {
         number += "1";
         console.log(index * number)
@@ -37,3 +38,4 @@ for (x = 0; x <10; x++) {
 for (let x = 100; x > 0; x -= 5) {
     console.log(x);
 }
+
