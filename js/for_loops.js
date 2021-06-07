@@ -1,3 +1,5 @@
+"use strict";
+
 //Exercise 2
 function showMultiplicationTable(x,y) {
     for (var y = 0; y <= 10; y++) {

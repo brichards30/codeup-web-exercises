@@ -1,3 +1,5 @@
+"use strict";
+
 //While Loops
 
 var number = 1;
