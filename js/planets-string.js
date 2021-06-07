@@ -28,15 +28,9 @@
 
     var planetsListed = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
     console.log(planetsListed);
-    document.write(planetsListed);
+    document.write(planetsListed);// document.write is used to show the code in the HTML file
 
 
-
-
-
-
-
-    //var exploded = lines.split('<br />');
 
 
 
