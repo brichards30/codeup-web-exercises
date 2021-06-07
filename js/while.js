@@ -13,7 +13,7 @@ if (number > 67000) {
 
 
 //Do While Loop
-/* let allCones = Math.floor(Math.random() * 50) + 50;
+let allCones = Math.floor(Math.random() * 50) + 50;
 console.log("The number of cones I can sell " + allCones);
 
 //total cones sold today
@@ -31,7 +31,7 @@ do {
     console.log("Yay! I sold them all!");
 
 } while (totalSold < allCones);
- */
+
 
 let allCars = Math.floor(Math.random() * 50) + 50;
 console.log("I need to sell " + allCars + " cars for my bonus.");

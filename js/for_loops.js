@@ -9,8 +9,9 @@ function showMultiplicationTable(x,y) {
 showMultiplicationTable(6);
 
 // Exercise 3
+var x;
 for (x = 0; x <10; x++) {
-    let x = Math.ceil(Math.random() * 100) + 10; //IMPORTANT
+    let x = Math.ceil(Math.random() * 100) + 10; //IMPORTANT, ceiling rounds up
     if (x % 2 === 0) {
         console.log(x + " is even");
     } else{
