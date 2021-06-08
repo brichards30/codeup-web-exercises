@@ -9,6 +9,8 @@ if (number > 67000) {
     break;
 } console.log(number);
 }
+console.log("");
+console.log("Ice Cream Cones");
 
 
 
@@ -28,28 +30,31 @@ do {
     console.log("My customer purchased " + conesBought);
     totalSold = totalSold + conesBought;
     console.log("I've sold " + totalSold + " ice cream cones");
-    console.log("Yay! I sold them all!");
+
 
 } while (totalSold < allCones);
+console.log("Yay! I sold them all!");
+console.log("");
 
+console.log("Car Sales");
 
-let allCars = Math.floor(Math.random() * 50) + 50;
+let allCars = Math.floor(Math.random() * 2) + 10;
 console.log("I need to sell " + allCars + " cars for my bonus.");
 
-let totalSold = 0;
+let totalCarsSold = 0;
 
 do {
     let carsBought = Math.floor(Math.random() * 5) + 1;
 
-    if((totalSold + carsBought) > allCars) {
-        console.log("I'm sorry, I cannot sell " + carsBought);
+    if((totalCarsSold + carsBought) > allCars) {
+        console.log("I'm sorry, I cannot sell " + carsBought + ".");
         continue;
     }
         console.log("My customer purchased " + carsBought + ".");
-        totalSold = totalSold + carsBought;
-        console.log("I've sold " + totalSold + " cars.");
+        totalCarsSold = totalCarsSold + carsBought;
+        console.log("I've sold " + totalCarsSold + " cars.");
 
-    } while (totalSold < allCars);
+    } while (totalCarsSold < allCars);
 console.log("Yay! I get the bonus!");
 
 
