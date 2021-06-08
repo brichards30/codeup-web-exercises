@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     * TODO:
+
      * Create an object with firstName and lastName properties that are strings
      * with your first and last name. Store this object in a variable named
      * `person`.
@@ -12,8 +12,16 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {};
+
+    person = {
+        firstName: "Brittany",
+        lastName: "Richards",
+    }
+    console.log(person.firstName);
+    console.log(person.lastName);
+
     /**
-     * TODO:
      * Add a sayHello method to the person object that returns a greeting using
      * the firstName and lastName properties.
      * console.log the returned message to check your work
@@ -21,6 +29,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+        person.sayHello =function () {
+                return "Hello from " + person.firstName + " " + person.lastName + "!";
+            }
+       console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +48,14 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+      {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +69,49 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+var books = [
+        {title: "The Last Juror",
+            author: {
+            firstName: "John",
+            lastName: "Grisham",
+            }},
+        {title: "Can't Hurt Me",
+            author: {
+            firstName:"David",
+            lastName: "Goggins"
+            }},
+        {title: "Professional Troublemaker",
+            author: {
+            firstName: "Luvvie",
+            lastName: "Ajayi Jones"
+            }},
+        {title: "The Total Money Makeover",
+            author: {
+            firstName: "David",
+            lastName: "Ramsey"
+            }},
+        {title: "The Subtle Art of Not Giving A F*ck",
+            author: {
+            firstName: "Mark",
+            lastName: "Manson"
+            }}
+    ];
+
+    console.log(books[0].title)
+    console.log(books[0].author.firstName)
+    console.log(books[0].author.lastName)
+    console.log(books[1].title)
+    console.log(books[1].author.firstName)
+    console.log(books[1].author.lastName)
+    console.log(books[2].title)
+    console.log(books[2].author.firstName)
+    console.log(books[2].author.lastName)
+    console.log(books[3].title)
+    console.log(books[3].author.firstName)
+    console.log(books[3].author.lastName)
+    console.log(books[4].title)
+    console.log(books[4].author.firstName)
+    console.log(books[4].author.lastName)
 
     /**
      * TODO:
@@ -79,6 +137,14 @@
      *      ---
      *      ...
      */
+    /*books.forEach(function(book) {
+        console.log(book);
+    });
+
+     */
+    for (let index = 0; index <= 4; index++) {
+        console.log("Book # " + (index + 1) + "\n" + "Title: " + books[index].title + "\n" + "Author: " + books[index].author.firstName + " " + books[index].author.lastName + "\n" + "---");
+    }
 
     /**
      * Bonus:
