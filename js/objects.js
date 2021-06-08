@@ -13,6 +13,8 @@
      */
 
     var person = {};
+    //person.firstName = "Brittany"
+    //person.lastName = "Richards"
 
     person = {
         firstName: "Brittany",
@@ -29,7 +31,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-      person.sayHello =function () {
+      person.sayHello = function () {
                 return "Hello from " + person.firstName + " " + person.lastName + "!";
             }
        console.log(person.sayHello());
@@ -48,17 +50,16 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-
+    //need to create a variable for the discount && then a new variable called discount (amount * discount)
     var shoppers = [
       {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
 
-    var discountPercentage = .12;
     shoppers.forEach(function(shopper) {
         //console.log(shopper);
-        var discount = shopper.amount * discountPercentage;
+        var discount = shopper.amount * .12;
         var total = shopper.amount - discount;
 
         if (shopper.amount < 200) {
@@ -82,31 +83,11 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 var books = [
-        {title: "The Last Juror",
-            author: {
-                firstName: "John",
-                lastName: "Grisham",
-            }},
-        {title: "Can't Hurt Me",
-            author: {
-                firstName:"David",
-                lastName: "Goggins"
-            }},
-        {title: "Professional Troublemaker",
-            author: {
-                firstName: "Luvvie",
-                lastName: "Ajayi Jones"
-            }},
-        {title: "The Total Money Makeover",
-            author: {
-                firstName: "David",
-                lastName: "Ramsey"
-            }},
-        {title: "The Subtle Art of Not Giving A F*ck",
-            author: {
-                firstName: "Mark",
-                lastName: "Manson"
-            }}
+        {title: "The Last Juror", author: {firstName: "John", lastName: "Grisham",}},
+        {title: "Can't Hurt Me", author: {firstName:"David", lastName: "Goggins"}},
+        {title: "Professional Troublemaker", author: {firstName: "Luvvie", lastName: "Ajayi Jones"}},
+        {title: "The Total Money Makeover", author: {firstName: "David", lastName: "Ramsey"}},
+        {title: "The Subtle Art of Not Giving A F*ck", author: {firstName: "Mark", lastName: "Manson"}}
     ];
 
     console.log(books[0].title);
@@ -116,19 +97,6 @@ var books = [
     console.log(books[1].title);
     console.log(books[1].author.firstName);
     console.log(books[1].author.lastName);
-
-    console.log(books[2].title);
-    console.log(books[2].author.firstName);
-    console.log(books[2].author.lastName);
-
-    console.log(books[3].title);
-    console.log(books[3].author.firstName);
-    console.log(books[3].author.lastName);
-
-    console.log(books[4].title);
-    console.log(books[4].author.firstName);
-    console.log(books[4].author.lastName);
-
 
     /**
 
