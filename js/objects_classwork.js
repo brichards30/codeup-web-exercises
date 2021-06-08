@@ -31,11 +31,35 @@ person.daughter = child;
 car.owner = person
 console.log(car);
 
-car.info = function (name) {
+function infoFunction (arg) {
     //return car.year + ", " + car.make + " " + car.model
-    if (name !== undefined) {
-        return "Hi, my name is " + name + " and I own a " + car.year + ", " + car.make + " " + car.model + "."
+    if (arg === true) {
+        return "Hi, my name is " + this.owner.name + " and I own a " + this.year + ", " + this.make + " " + this.model + ".";
     }
+    return this.year + ", " + this.make + " " + this.model;
 }
-car.info();
-console.log(car.info("Brittany"));
+car.info = infoFunction;
+
+console.log("");
+
+var carTwo = {};
+
+carTwo = {
+    make: "Lincoln",
+    model: "Navigator",
+    year: 2021,
+    numberOfDoors: 4,
+    numberOfSeats: 8,
+    transmission: "automatic",
+    owner: {
+        name: "Dennis",
+        heightInInches: 68,
+        age: 48,
+        son: {
+            name: "Jett",
+            age: 17,
+        }
+    },
+    info: infoFunction
+}
+
