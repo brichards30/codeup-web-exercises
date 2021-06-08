@@ -29,10 +29,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-        person.sayHello =function () {
+      person.sayHello =function () {
                 return "Hello from " + person.firstName + " " + person.lastName + "!";
             }
        console.log(person.sayHello());
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -54,10 +55,21 @@
         {name: 'George', amount: 320}
     ];
 
+    var discountPercentage = .12;
+    shoppers.forEach(function(shopper) {
+        //console.log(shopper);
+        var discount = shopper.amount * discountPercentage;
+        var total = shopper.amount - discount;
+
+        if (shopper.amount < 200) {
+            console.log(shopper.name +  ":" + "\n" + "Your total spent before discount: $" + shopper.amount + "\n" + "Your purchases do not qualify for a discount.");
+        } else {
+            console.log(shopper.name + ":" + "\n" + "Your total spent before discount: $" + shopper.amount + "\n" + "Your purchases qualify for a 12% discount!" + "\n" + "Your discount: $" + discount.toFixed(2) + "\n" + "Your new total $" + total.toFixed(2));
+        }
+    });
 
 
-
-    /** TODO:
+    /**
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
      * property. The author property should be an object with properties
@@ -72,49 +84,54 @@
 var books = [
         {title: "The Last Juror",
             author: {
-            firstName: "John",
-            lastName: "Grisham",
+                firstName: "John",
+                lastName: "Grisham",
             }},
         {title: "Can't Hurt Me",
             author: {
-            firstName:"David",
-            lastName: "Goggins"
+                firstName:"David",
+                lastName: "Goggins"
             }},
         {title: "Professional Troublemaker",
             author: {
-            firstName: "Luvvie",
-            lastName: "Ajayi Jones"
+                firstName: "Luvvie",
+                lastName: "Ajayi Jones"
             }},
         {title: "The Total Money Makeover",
             author: {
-            firstName: "David",
-            lastName: "Ramsey"
+                firstName: "David",
+                lastName: "Ramsey"
             }},
         {title: "The Subtle Art of Not Giving A F*ck",
             author: {
-            firstName: "Mark",
-            lastName: "Manson"
+                firstName: "Mark",
+                lastName: "Manson"
             }}
     ];
 
-    console.log(books[0].title)
-    console.log(books[0].author.firstName)
-    console.log(books[0].author.lastName)
-    console.log(books[1].title)
-    console.log(books[1].author.firstName)
-    console.log(books[1].author.lastName)
-    console.log(books[2].title)
-    console.log(books[2].author.firstName)
-    console.log(books[2].author.lastName)
-    console.log(books[3].title)
-    console.log(books[3].author.firstName)
-    console.log(books[3].author.lastName)
-    console.log(books[4].title)
-    console.log(books[4].author.firstName)
-    console.log(books[4].author.lastName)
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+
+    console.log(books[1].title);
+    console.log(books[1].author.firstName);
+    console.log(books[1].author.lastName);
+
+    console.log(books[2].title);
+    console.log(books[2].author.firstName);
+    console.log(books[2].author.lastName);
+
+    console.log(books[3].title);
+    console.log(books[3].author.firstName);
+    console.log(books[3].author.lastName);
+
+    console.log(books[4].title);
+    console.log(books[4].author.firstName);
+    console.log(books[4].author.lastName);
+
 
     /**
-     * TODO:
+
      * Loop through the books array and output the following information about
      * each book:
      * - the book number (use the index of the book in the array)
