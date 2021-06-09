@@ -62,12 +62,14 @@
         var discount = shopper.amount * .12;
         var total = shopper.amount - discount;
 
-        if (shopper.amount < 200) {
+        if (shopper.amount <= 200) {
             console.log(shopper.name +  ":" + "\n" + "Your total spent before discount: $" + shopper.amount + "\n" + "Your purchases do not qualify for a discount.");
         } else {
             console.log(shopper.name + ":" + "\n" + "Your total spent before discount: $" + shopper.amount + "\n" + "Your purchases qualify for a 12% discount!" + "\n" + "Your discount: $" + discount.toFixed(2) + "\n" + "Your new total $" + total.toFixed(2));
         }
     });
+//try to come up with the output in console.log and then work backwards
+
 
 
     /**
@@ -122,11 +124,17 @@ var books = [
      *      ---
      *      ...
      */
-    /*books.forEach(function(book) {
-        console.log(book);
-    });
+    //console.log how you want the input to look and then plug in the elements
+   /*
+   books.forEach(function(book, index) {
+   console.log("Book # " + (index + 1));
+   console.log("Title: " + book.title);
+   console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+   console.log("---");
+   });
+    */
 
-     */
+
     for (let index = 0; index <= 4; index++) {
         console.log("Book # " + (index + 1) + "\n" + "Title: " + books[index].title + "\n" + "Author: " + books[index].author.firstName + " " + books[index].author.lastName + "\n" + "---");
     }
@@ -142,4 +150,17 @@ var books = [
      *   `showBookInfo` function.
      */
 
+  /*  function createBook(title, author) {
+        let name = author.split(" ")
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+        }
+        }
+    }
+    let myBooks = [];
+    myBooks.push(createBook()
+   */
 })();
