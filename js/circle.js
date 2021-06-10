@@ -20,7 +20,7 @@
             if (doRounding === true) {
                 return Math.round(this.getArea());
             } else {
-                return area;
+                return this.getArea;
             }
 
 
