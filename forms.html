@@ -8,32 +8,40 @@
 <form method="POST" action="https://request-inspector.glitch.me/">
   <p>
     <label for="email">Email</label>
-  <input id="email" name="email" placeholder="Enter email here.">
+  <input id="email" name="useremail" type="email" placeholder="Enter email here.">
   </p>
+
   <p>
     <label for="password">Password</label>
-  <input id="password" name="password" placeholder="Enter password here.">
+  <input id="password" name="userpassword" type="password" placeholder="Enter password here.">
   </p>
+
   <p>
     <label for="bio">Bio:</label>
-    <textarea id="bio" name="bio" rows="10" cols="40" placeholder="Enter a short bio here"></textarea>
+    <textarea id="bio" name="userbio" rows="10" cols="40" placeholder="Enter a short bio here"></textarea>
   </p>
 
 <section>
   <h3>How did you hear about us?</h3>
 
-  <label>
-    <input type="radio" name="about" value="billboard">Billboard
-  </label>
-  <label>
-    <input type="radio" name="about" value="radio_ad">Radio Advertisement
-  </label>
-  <label>
-    <input type="radio" name="about" value="internet_ad">Internet Advertisement
-  </label>
-  <label>
-    <input type="radio" name="about" value="other">Other
-  </label>
+
+    <input id="billboard" type="radio" name="hearabout" value="billboard">
+  <label for="billboard">Billboard</label>
+
+
+    <input id="radio_ad" type="radio" name="hearabout" value="radio_ad">
+  <label for="radio_ad">Radio Advertisement</label>
+
+
+
+    <input id="internet_ad" type="radio" name="hearabout" value="internet_ad">
+  <label for="internet_ad">Internet Advertisement</label>
+
+
+
+    <input id="other" type="radio" name="hearabout" value="other">
+    <label for="other">Other</label>
+
 </section>
 
 <section>
@@ -46,11 +54,14 @@
       <option value="3">Firefox</option>
       <option value="4">Chrome</option>
       <option value="5">Edge</option>
+      <option disabled value="Internet_Explorer">Internet Explorer</option>
     </select>
   <br><br>
 <p>
-  <button type="submit">Submit</button>
+  <button type="submit">Register</button>
+</p>
 </form>
+
 </section>
 
 
