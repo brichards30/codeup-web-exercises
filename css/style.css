@@ -1,4 +1,42 @@
 .fancy-header {
-    color:purple;
+    color:darkred;
 
+}
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    color: darkred;
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("../img/white_desk.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: grey;
+    font-family: fantasy;
+}
+ul > li {
+    list-style-type: square;
+}
+
+td, tr {
+    padding: 2em;
+    font-size: 1em;
+    font-weight: bold;
+}
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: rebeccapurple;
+    font-size: 1.2em;
+    transition: 500ms;
 }
