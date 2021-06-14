@@ -18,16 +18,40 @@
     <label for="bio">Bio:</label>
     <textarea id="bio" name="bio" rows="10" cols="40" placeholder="Enter a short bio here"></textarea>
   </p>
-</form>
+
 <section>
   <h3>How did you hear about us?</h3>
+
   <label>
     <input type="radio" name="about" value="billboard">Billboard
   </label>
   <label>
     <input type="radio" name="about" value="radio_ad">Radio Advertisement
   </label>
+  <label>
+    <input type="radio" name="about" value="internet_ad">Internet Advertisement
+  </label>
+  <label>
+    <input type="radio" name="about" value="other">Other
+  </label>
+</section>
 
+<section>
+  <h3>What Browser Are You Using?</h3>
+  <!--<form method="POST" action="https://request-inspector.glitch.me/">-->
+    <label for="browser">Browser</label>
+    <select id="browser" name="browser">
+      <option selected value="1">Safari</option>
+      <option value="2">Opera</option>
+      <option value="3">Firefox</option>
+      <option value="4">Chrome</option>
+      <option value="5">Edge</option>
+    </select>
+  <br><br>
+<p>
+  <button type="submit">Submit</button>
+</form>
+</section>
 
 
 </body>
