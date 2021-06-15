@@ -6,43 +6,30 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
-.message-info {
-    color: purple;
-    width: 80%;
+.message {
+    width: 90%;
     margin: 0 auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: .5em;
+    margin-bottom: .5em;
     border: 1px lightgray;
     border-style: solid;
-    border-radius: 4px;
-    background-color: powderblue;
+    border-radius: .5em;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 10px;
 
 }
+.message-info {
+    color: purple;
+    background-color: powderblue;
+}
 .message-success {
     color: green;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 8px;
-    border: 1px lightgray;
-    border-style: solid;
-    border-radius: 4px;
     background-color: greenyellow;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
 }
 
 .message-warning {
     color: goldenrod;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 8px;
-    border: 1px lightgray;
-    border-style: solid;
-    border-radius: 4px;
     background-color: yellow;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -51,14 +38,5 @@ body, html {
 
 .message-error {
     color: darkred;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 8px;
-    border: 1px lightgray;
-    border-style: solid;
-    border-radius: 4px;
     background-color: pink;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
 }
