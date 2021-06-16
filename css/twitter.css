@@ -69,8 +69,8 @@ a {
 }
 .timeline {
     float: left;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
 }
 .who-to-follow {
     float: left;
@@ -101,4 +101,7 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+.container {
+    margin: 2em;
 }
