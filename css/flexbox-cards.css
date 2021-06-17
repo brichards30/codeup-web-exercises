@@ -21,7 +21,7 @@ a {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    /* TODO: Make this a flex container and align it's items to the center*/
+    /* Make this a flex container and align it's items to the center*/
 }
 
 .card {
@@ -31,7 +31,7 @@ a {
     border-radius: 4px;
     text-align: center;
     flex-basis: 100%;
-    /*  TODO: Change this flex items basis to 100% of the page  */
+    /*  Change this flex items basis to 100% of the page  */
 }
 
 .card-title {
