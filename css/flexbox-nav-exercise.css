@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: grey;
+    display: flex;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: san;
+}
+nav a:hover {
+    background: black;
+}
+.container {
+    min-height: 10px;
+    min-width: 10px;
+    display: flex;
+}
