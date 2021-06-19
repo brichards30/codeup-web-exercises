@@ -14,16 +14,26 @@ nav {
 a {
     color: black;
     display: inline-block;
+    text-decoration: none;
 }
+
 .nav-link {
-    display: flex;
-    align-self: center;
+    padding: 0 10px;
+    /*display: flex;*/
+    /*align-self: center;*/
 
 }
 .nav-items {
     display: flex;
+    align-items: center;
 }
 .logos {
     display: flex;
-    justify-content: center;
+   /*align-items: center;*/
+    align-content: center;
+}
+.logos div {
+    padding: 0 10px;
+    /*align-items: center;*/
+    align-self: center;
 }
