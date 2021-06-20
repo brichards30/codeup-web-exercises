@@ -15,6 +15,12 @@ a {
     color: black;
     display: inline-block;
     text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: smaller;
+
+}
+h1 {
+    font-size: x-large ;
 }
 
 .nav-link {
@@ -22,10 +28,12 @@ a {
     /*display: flex;*/
     /*align-self: center;*/
 
+
 }
 .nav-items {
     display: flex;
     align-items: center;
+
 }
 .logos {
     display: flex;
