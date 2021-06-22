@@ -1,0 +1,7 @@
+.jumbotron-fluid {
+    background-image:url("../img/pizza.png");
+}
+.jumbotron-fluid > h1 {
+    text-align: center;
+
+}
