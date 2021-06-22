@@ -10,3 +10,6 @@
     background-color: lightgray;
     opacity: .7;
 }
+.card-header {
+    list-style-type: none;
+}
