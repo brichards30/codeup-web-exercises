@@ -13,4 +13,8 @@
 .card-header {
     list-style-type: none;
 }
-.
+.next  {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
