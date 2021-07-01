@@ -30,18 +30,23 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header') ;
+        // var mainHeader = document.querySelector('#main-header'); gets the 1st item
+        mainHeader.style.fontFamily = "Papyrus, cursive";
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         mainHeader.innerHTML = "Javascript is Cool";
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
+        // var subHeader = document.querySelector('#sub-header');
 
         // TODO: Set the text color of subHeader to blue
         subHeader.style.color = '#0000ff'
-        // TODO: Uncomment the next line and get all list items
 
+        // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
+        // var listItems = document.querySelectorAll("li"); grabs all items with tag
+
 
         // TODO: Set text color on every other list item to grey
         for (var i = 0; i < listItems.length; i += 2) {
@@ -58,8 +63,6 @@
             }
             console.log(dbId);
         }
-
-
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.querySelector(".sub-paragraph");
