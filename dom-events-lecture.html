@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hey, hey, hey</h1>
+
+<label>
+    Search
+    <input id="searchBar" type="text">
+</label>
+
+<button>Remove All Events</button>
+
+<script>
+
+    var myHeader = document.querySelector("h1");
+    myHeader.innerText = 'I am Groot!';
+
+    myHeader.addEventListener('dblclick', function () {
+        console.log("You clicked on me!")
+    })
+
+    var potentialResults = ['How to be Great', 'How to Bake Mac n Cheese', "How to Change Oil"];
+
+
+    var searchBarElement = document.getElementById("searchBar");
+
+    searchBarElement.addEventListener("keyup", searchCallBack)
+
+    // console.log(searchBarElement.value);
+    function searchCallBack() {
+        potentialResults.forEach(function (result) {
+
+            var whatUserIsSearchingFor = searchBarElement.value
+
+            if (result.toLowerCase().includes(whatUserIsSearchingFor.toLowerCase())) {
+                console.log('Here is a potential result...')
+                console.log(result);
+            }
+        })
+    }
+
+
+    var buttontoDestroyAll = document.querySelector('button')
+
+    buttontoDestroyAll.addEventListener('click', destroyEvents)
+
+    function destroyEvents() {
+        searchBarElement.removeEventListener('keyup', searchCallBack)
+        buttontoDestroyAll.removeEventListener('click', destroyEvents)
+        console.log('Removing Events')
+    }
+
+    console.log(searchBarElement);
+</script>
+
+</body>
+</html>

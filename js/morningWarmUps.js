@@ -18,6 +18,9 @@ console.log(countSpaces("B Richards"));
 // TODO: Create a function named capitalizeAllNames that accepts an array of strings and returns the array with all of its elements capitalized.
 // Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
 
+
+// function capitalizeAllNames(stringsArray) {
+//
 function capitalizeAllNames(input) {
     var input = ["bob","Seth","TOFU","Toyota"];
     return input.toUpperCase();
