@@ -19,27 +19,24 @@ console.log(countSpaces("B Richards"));
 // TODO: Create a function named capitalizeAllNames that accepts an array of strings and returns the array with all of its elements capitalized.
 // Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
 
-// function capitalizeAllNames(names) {
-//     var names = [];
-//     var upperCased = names.map(name => name.toUpperCase())
-//     return upperCased;
-// }
-//const names = ['Ali', 'Atta', 'Alex', 'John'];
-//
-// const lowercased = names.map(name => name.toLowerCase());
-//
-// console.log(lowercased);
-// console.log(capitalizeAllNames(input));
+function capitalizeAllNames(names) {
+
+   return names.map(name => name.toUpperCase())
+   //  return upperCased;
+}
+
+//console.log(lowercased);
+console.log(capitalizeAllNames(["bob","Seth","TOFU","Toyota"]));
 
 
 // TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
 //  each string being capitalized while having the rest of the string lowercase look at the example below for reference.
-// Example:  capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["Bob","Seth","Tofu","Toyota"]
+//Example:  capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["Bob","Seth","Tofu","Toyota"]
 
-// function capitalizeFirstLetter(input) {
-//
-// }
-
+function capitalizeFirstLetter(names) {
+    return names.map(name => name[0].toUpperCase() + name.substr(1).toLowerCase())
+}
+console.log(capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]));
 // July 7th 2021
 // TODO: Create a method on the object down below named getFullName that when called returns the users full name using the "this" key term.
 // Example: personOne.getFullName() ---- returns ----> "silvia floopertan"
@@ -63,7 +60,7 @@ console.log(countSpaces("B Richards"));
         heightInInches: 73
     }
     personTwo.getNicelyFormattedFullName = function () {
-        console.log("This person's name is: " + this.firstName[0].toUpperCase() + this.firstName.substr(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substr(1));
+        return ("This person's name is: " + this.firstName[0].toUpperCase() + this.firstName.substr(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substr(1));
     }
     personTwo.getNicelyFormattedFullName();
 // TODO: Create a method on the object below that gives us the behavior that the example implies.
@@ -75,6 +72,6 @@ console.log(countSpaces("B Richards"));
         heightInInches: 62
     }
     personThree.intro = function () {
-        console.log("Hello, my name is " + this.firstName[0].toUpperCase() + this.firstName.substr(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substr(1) + " and I am " + this.ageInYears + " years old.")
+        return "Hello, my name is " + this.firstName[0].toUpperCase() + this.firstName.substr(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substr(1) + " and I am " + this.ageInYears + " years old."
     }
     personThree.intro();
