@@ -75,3 +75,52 @@ console.log(capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]));
         return "Hello, my name is " + this.firstName[0].toUpperCase() + this.firstName.substr(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substr(1) + " and I am " + this.ageInYears + " years old."
     }
     personThree.intro();
+
+// July 8th 2021
+// Part 1
+// TODO: Create a function that takes an array of strings and returns an array of objects
+//  where each object has 2 properties: originalString and countOfLetters
+
+function stringsToObjects (arrayStrings) {
+    var newObjects =[]
+
+    for (let i = 0; i < arrayStrings.length; i++) {
+        // console.log(arrayStrings[i]);
+        newObjects.push({originalString:arrayStrings[i] , lengthOfOriginalString: arrayStrings[i].length});
+    }
+    return newObjects;
+}
+var arrayOfObjects = stringsToObjects(["hello", "dave"]);
+// Example: input: ["hello", "dave"]
+//          returns: [
+//                    { "originalString":"hello", lengthOfOriginalString:5 },
+//                    { "originalString":"dave", lengthOfOriginalString:4 }
+//                   ]
+
+
+// Part 2
+// TODO: Create a function that takes the array of objects from PART 1
+//  and returns a string of all of the originalStrings concatenated with spaces in between
+
+function arrayOfObjectsToStrings(arrayObjects) {
+    var ogStrings = []
+
+    arrayObjects.forEach(function (lonelyObject){
+
+        ogStrings.push(lonelyObject.originalString)
+    })
+
+   return ogStrings.join(" ")
+}
+arrayOfObjectsToStrings(arrayOfObjects);
+// Example: input: [
+//                    { "originalString":"hello", lengthOfOriginalString:5 },
+//                    { "originalString":"dave", lengthOfOriginalString:4 }
+//                  ]
+//          returns: "hello dave"
+// TODO: Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
+//  as PersonOne, PersonTwo, and PersonThree. The functions job is to return an array of users that have heightInInches equal to or greater than 65.
+var people = [personOne,personTwo,personThree];
+// Example: getTallUsers(people)
+// ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
+//
