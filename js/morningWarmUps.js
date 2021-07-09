@@ -124,3 +124,14 @@ var people = [personOne,personTwo,personThree];
 // Example: getTallUsers(people)
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
+function getAllUsers(arrOfPersons) {
+    var allThePeople =[];
+
+    for (let i = 0; i < arrOfPersons.length; i++) {
+        // console.log(arrayStrings[i]);
+        allThePeople.push({firstName: arrOfPersons[i].firstName, lastName: arrOfPersons[i].lastName, ageInYears: arrOfPersons[i].ageInYears, heightInInches: arrOfPersons[i].heightInInches});
+    }
+    return allThePeople;
+}
+
+console.log(getAllUsers(people));
