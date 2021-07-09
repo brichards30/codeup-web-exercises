@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Intro</title>
+</head>
+<body>
+<h1>Welcome to JQuery</h1>
+
+<div id="something">
+
+  <p>This is pretty dope!</p>
+  <p>Do you think so, too?</p>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="js/externalJQuery.js"></script>
+
+<script>
+  console.log($(document));
+</script>
+
+</body>
+</html>
+
+<!--$("") is the equivalent of getElementById
+
+$(document).ready(); is a event reader, loads HTML but does not wait for pics
+ Don't want JS to load before the HTML
+ window.onload will wait for entire page to load including pictures
+ Method Chaining:
+ method after method ex: "Mark".split("").reverse.join("")
+
+ when downloading JQuery, download the full not the .min-->
