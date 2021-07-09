@@ -125,13 +125,27 @@ var people = [personOne,personTwo,personThree];
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
 function getAllUsers(arrOfPersons) {
-    var allThePeople =[];
+    var tallPeople =[];
 
     for (let i = 0; i < arrOfPersons.length; i++) {
         // console.log(arrayStrings[i]);
-        allThePeople.push({firstName: arrOfPersons[i].firstName, lastName: arrOfPersons[i].lastName, ageInYears: arrOfPersons[i].ageInYears, heightInInches: arrOfPersons[i].heightInInches});
+
+        var currentUser = arrOfPersons[i];
+
+        var currentUserHeight = currentUser.heightInInches;
+        // var userIsTallEnough = currentUserHeight >= 65
+
+        if (currentUserHeight >= 65) {
+            tallPeople.push(currentUser);
+            //if (userIsTallEnough)
+            //tallPeople.push(currentUser)
+        }
+        // tallPeople.push({firstName: arrOfPersons[i].firstName,
+        //     lastName: arrOfPersons[i].lastName,
+        //     ageInYears: arrOfPersons[i].ageInYears,
+        //     heightInInches: arrOfPersons[i].heightInInches});
     }
-    return allThePeople;
+    return tallPeople;
 }
 
 console.log(getAllUsers(people));
