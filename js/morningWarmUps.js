@@ -149,3 +149,4 @@ function getAllUsers(arrOfPersons) {
 }
 
 console.log(getAllUsers(people));
+
