@@ -6,7 +6,7 @@
 
  $(document).ready(function (){
 function whenClickdOnce(event) {
-    $(this).css({'background-color': '#335BFF'});
+    $(this).css({'background-color': '#0a296f'});
     $(this).css({'color': '#FFFFFF'})
 }
 $('h1').click(whenClickdOnce);
@@ -17,7 +17,7 @@ function dblClickd(event) {
 $('p').dblclick(dblClickd);
 
 function hoverIn(event) {
-    $(this).css('color', '#FF5733');
+    $(this).css('color', '#d41616');
 }
 
 function hoverOut(event){

@@ -6,39 +6,76 @@
 </head>
 <body>
 
-<h1 id="codeup1">Hello Codeup 1</h1>
-<h1 id="codeup2">Hello Codeup 2</h1>
-<h1 id="codeup3">Hello Codeup 3</h1>
+<p>Please type something into form:</p>
+
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
 
 
 <script src="js/jquery-2.x-git.js"></script>
 
 <script>
-  "use strict";
+    //do js stuff here or link JS page
 
-  function clicks(event) {
-    alert('codeup1 clicked')
-  }
-  function hoverIn(event) {
-    $(this).css('background-color', '#000000');
-    $(this).css('color', '#FFFFFF');
-  }
+    function doKeyDown(event) {
+        //potentially use event.code
+        if(event.key === 'a') {
+            console.log('a pressed');
+        }else if(event.key === 'b') {
+            console.log('b pressed');
+        }else if(event.key === 'arrowleft') {
+            console.log('left arrow pressed');
+        }else {
+            console.log(event.key + ' pressed');
+        }
+    }
+    $('#textfield').keydown(doKeyDown);
+    // $('#textfield').keyup(function(event){
+    //     console.log(event.key + ' key was released!');
+    // });
 
-  function hoverOut(event) {
-    $(this).css('background-color', '#FFFFFF');
-    $(this).css('color', '#000000');
-  }
+    $('#textfield').on('change', function(event){
+        console.log(event.target.value + ' change happened!');
+    });
 
-  $('#codeup1').click(clicks);
-
-  $('#codeup2').dblclick(function(event){
-    alert('codeup2 double-clicked');
-  });
-
-  $('#codeup3').hover(hoverIn, hoverOut);
-  $('#codeup2').hover(hoverIn, hoverOut);
-  $('#codeup1').hover(hoverIn, hoverOut);
 
 </script>
 </body>
 </html>
+
+<!--JQuery Events Lecture-->
+<!--<h1 id="codeup1">Hello Codeup 1</h1>&ndash;&gt;-->
+<!--<h1 id="codeup2">Hello Codeup 2</h1>-->
+<!--<h1 id="codeup3">Hello Codeup 3</h1>-->
+
+
+<!--<script src="js/jquery-2.x-git.js"></script>-->
+
+<!--<script>-->
+<!--  "use strict";-->
+
+<!--  function clicks(event) {-->
+<!--    alert('codeup1 clicked')-->
+<!--  }-->
+<!--  function hoverIn(event) {-->
+<!--    $(this).css('background-color', '#000000');-->
+<!--    $(this).css('color', '#FFFFFF');-->
+<!--  }-->
+
+<!--  function hoverOut(event) {-->
+<!--    $(this).css('background-color', '#FFFFFF');-->
+<!--    $(this).css('color', '#000000');-->
+<!--  }-->
+
+<!--  $('#codeup1').click(clicks);-->
+
+<!--  $('#codeup2').dblclick(function(event){-->
+<!--    alert('codeup2 double-clicked');-->
+<!--  });-->
+
+<!--  $('#codeup3').hover(hoverIn, hoverOut);-->
+<!--  $('#codeup2').hover(hoverIn, hoverOut);-->
+<!--  $('#codeup1').hover(hoverIn, hoverOut);-->
+
+<!--</script>-->

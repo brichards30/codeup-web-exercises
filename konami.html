@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        #cheater-gif {
+            visibility: hidden;
+        }
+        * {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+<img id="cheater-gif" src="https://media.giphy.com/media/U5PbkLRE7eRaVTZQcQ/giphy.gif">
+
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function (e) {
+
+        var konamiKeys;
+        var konamiCode;
+        var konamiCurrentPosition;
+
+        konamiKeys = {
+            13: 'enter',
+            37: 'left',
+            38: 'up',
+            39: 'right',
+            40: 'down',
+            65: 'a',
+            66: 'b'
+        };
+
+        konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
+
+        konamiCurrentPosition = 0;
+
+        $(document).keydown(function (event) {
+            var enteredKeys = konamiKeys[event.keyCode];
+            var keyValue = konamiCode[konamiCurrentPosition];
+
+            if (enteredKeys == keyValue) {
+                konamiCurrentPosition++;
+                if (konamiCurrentPosition == konamiCode.length) {
+                    cheaterCheater();
+                    konamiCurrentPosition = 0;
+                }
+            } else {
+                konamiCurrentPosition = 0;
+            }
+        });
+
+    })
+    function cheaterCheater() {
+        //  $('*').css('background-color', 'red');
+        var cheaterSound = new Audio ('audio/cheater.wav');
+        cheaterSound.play();
+        $('#cheater-gif').css('visibility', 'visible');
+        alert('CHEATER CHEATER PUMPKIN EATER');
+    }
+</script>
+</body>
+</html>
+
+<!--https://media.giphy.com/media/U5PbkLRE7eRaVTZQcQ/giphy.gif-->
