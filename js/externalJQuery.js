@@ -6,18 +6,20 @@
 
 $(document).ready(function (){
 
-
-
     var quotes = $('#my-fav-quotes')
     console.log(quotes);
-    quotes.css({'list-style': 'none'});
+    //quotes.css({'list-style': 'none'});
 
     var h2 = $('h2');
     console.log(h2);
     alert(h2.html());
+
     var allMyLs = $("li");
     console.log(allMyLs[1]);
     alert(allMyLs.html());
+
+    var deepGif = $('#thats-deep-gif')
+    deepGif.css({"border-radius": "30px", "width": "50%"})
 });
 // var quotes = $('#my-fav-quotes')
 // console.log(quotes);
