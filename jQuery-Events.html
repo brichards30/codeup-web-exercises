@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="codeup1">Hello Codeup 1</h1>
+<h1 id="codeup2">Hello Codeup 2</h1>
+<h1 id="codeup3">Hello Codeup 3</h1>
+
+
+<script src="js/jquery-2.x-git.js"></script>
+
+<script>
+  "use strict";
+
+  function clicks(event) {
+    alert('codeup1 clicked')
+  }
+  function hoverIn(event) {
+    $(this).css('background-color', '#000000');
+    $(this).css('color', '#FFFFFF');
+  }
+
+  function hoverOut(event) {
+    $(this).css('background-color', '#FFFFFF');
+    $(this).css('color', '#000000');
+  }
+
+  $('#codeup1').click(clicks);
+
+  $('#codeup2').dblclick(function(event){
+    alert('codeup2 double-clicked');
+  });
+
+  $('#codeup3').hover(hoverIn, hoverOut);
+  $('#codeup2').hover(hoverIn, hoverOut);
+  $('#codeup1').hover(hoverIn, hoverOut);
+
+</script>
+</body>
+</html>
