@@ -4,48 +4,68 @@
 // })
 "use strict"
 
-$(document).ready(function (){
-var randomList;
-var h1;
-var h2;
-var catGifs;
-var codeup;
-var stuff;
+ $(document).ready(function (){
+function whenClickdOnce(event) {
+    $(this).css({'background-color': '#335BFF'});
+    $(this).css({'color': '#FFFFFF'})
+}
+$('h1').click(whenClickdOnce);
 
+function dblClickd(event) {
+    $(this).css({'font-size': '18px'});
+}
+$('p').dblclick(dblClickd);
 
+function hoverIn(event) {
+    $(this).css('color', '#FF5733');
+}
 
-    randomList= $('#random-list')
-    console.log(randomList);
-    randomList.css({'list-style': 'none'});
+function hoverOut(event){
+    $(this).css('color', '#000000');
+}
 
-    h1 = $('h1');
-    console.log(h1);
-    alert(h1.html());
+$('li').hover(hoverIn, hoverOut);
 
-    h2 = $('h2');
-    console.log(h2);
-    h2.css({"font-style": "italic"})
-    //alert(h2.html());
-
-    catGifs = $('.cats')
-    catGifs.css({"border-radius": "30px"})
-
-    codeup = $('.codeup')
-    codeup.css({'border': '3px solid red', 'border-radius': '30px'})
-
-    $('li').css({"font-size": "20px"})
-
-    stuff = $('h1, p, li')
-    console.log(stuff)
-    stuff.css({"background-color": "yellow"})
-
-
-
+     //JQuery Introduction Exercise
+// var randomList;
+// var h1;
+// var h2;
+// var catGifs;
+// var codeup;
+// var stuff;
+//
+//
+//
+//     randomList= $('#random-list')
+//     console.log(randomList);
+//     randomList.css({'list-style': 'none'});
+//
+//     h1 = $('h1');
+//     console.log(h1);
+//     alert(h1.html());
+//
+//     h2 = $('h2');
+//     console.log(h2);
+//     h2.css({"font-style": "italic"})
+//     //alert(h2.html());
+//
+//     catGifs = $('.cats')
+//     catGifs.css({"border-radius": "30px"})
+//
+//     codeup = $('.codeup')
+//     codeup.css({'border': '3px solid red', 'border-radius': '30px'})
+//
+//     $('li').css({"font-size": "20px"})
+//
+//     stuff = $('h1, p, li')
+//     console.log(stuff)
+//     stuff.css({"background-color": "yellow"})
+//
+//
+//
 });
-// var quotes = $('#my-fav-quotes')
-// console.log(quotes);
 
-//quotes.css();
+//JQuery Notes
 
 // $(document).ready(function() {
 //     alert( 'The DOM has finished loading!' );
