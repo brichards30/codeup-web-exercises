@@ -2,29 +2,66 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+
     <style>
-        #cheater-gif {
-            visibility: hidden;
+        @font-face {
+            font-family: 'Pricedown';
+            src: url('./css/pricedown.ttf') format('truetype');
         }
+
+        .cheater-gif {
+            width: 75%;
+            visibility: hidden;
+
+        }
+
         * {
             background-color: green;
+
         }
+
+        #busted {
+            color: white;
+            font-family: 'Pricedown';
+            visibility: hidden;
+            font-size: 75px;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Acme', sans-serif;
+        }
+
     </style>
 </head>
 <body>
 <h1>Konami Code</h1>
-<img id="cheater-gif" src="https://media.giphy.com/media/U5PbkLRE7eRaVTZQcQ/giphy.gif">
+
+<p id="busted">BUSTED!</p>
+
+<img class="cheater-gif" src="https://media.giphy.com/media/U5PbkLRE7eRaVTZQcQ/giphy.gif">
+
 
 <script src="js/jquery-2.x-git.js"></script>
 <script>
     "use strict";
 
-    $(document).ready(function (e) {
+    $(document).ready(function (e) { //use ready so the HTML is ready to go and not waiting on the keys to load the page lol
 
+        //variable to hold the required keys
         var konamiKeys;
+        //variable to hold the code in the required order as an object
         var konamiCode;
+        //variable to hold the current position of the code as it is being entered
         var konamiCurrentPosition;
 
+        //this might've been excessive since e.keyCode stopped working
         konamiKeys = {
             13: 'enter',
             37: 'left',
@@ -39,28 +76,39 @@
 
         konamiCurrentPosition = 0;
 
+        //whenever a key is pressed
         $(document).keydown(function (event) {
+            //variable to hold the determined keys by their keyCode via keycode.info
             var enteredKeys = konamiKeys[event.keyCode];
+            //variable to hold the current value of the key from konamiCode variable
             var keyValue = konamiCode[konamiCurrentPosition];
 
+            //if the entered key matches one of the konamiKeys AND is not beyond the length of konamiCode, continue counting the position
             if (enteredKeys == keyValue) {
                 konamiCurrentPosition++;
+                //once all keys are entered, run the cheaterCheater function and return the count to zero
                 if (konamiCurrentPosition == konamiCode.length) {
                     cheaterCheater();
                     konamiCurrentPosition = 0;
                 }
+                //if the entered key does not match any of the konamiKeys, don't count
             } else {
                 konamiCurrentPosition = 0;
             }
         });
 
     })
+
     function cheaterCheater() {
-        //  $('*').css('background-color', 'red');
-        var cheaterSound = new Audio ('audio/cheater.wav');
+        $('*').css('background-color', 'red');
+        $('h1').css('visibility', 'hidden')
+        $('#busted').css('visibility', 'visible')
+        var cheaterSound = new Audio('audio/cheater.wav');
         cheaterSound.play();
-        $('#cheater-gif').css('visibility', 'visible');
-        alert('CHEATER CHEATER PUMPKIN EATER');
+        var jailCellSound = new Audio('audio/jailcell.wav');
+        jailCellSound.play()
+        $('.cheater-gif').css('visibility', 'visible');
+        alert('LOOK AT YOU! OUT HERE CHEATING!');
     }
 </script>
 </body>
