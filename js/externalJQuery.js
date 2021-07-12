@@ -5,21 +5,42 @@
 "use strict"
 
 $(document).ready(function (){
+var randomList;
+var h1;
+var h2;
+var catGifs;
+var codeup;
+var stuff;
 
-    var quotes = $('#my-fav-quotes')
-    console.log(quotes);
-    //quotes.css({'list-style': 'none'});
 
-    var h2 = $('h2');
+
+    randomList= $('#random-list')
+    console.log(randomList);
+    randomList.css({'list-style': 'none'});
+
+    h1 = $('h1');
+    console.log(h1);
+    alert(h1.html());
+
+    h2 = $('h2');
     console.log(h2);
-    alert(h2.html());
+    h2.css({"font-style": "italic"})
+    //alert(h2.html());
 
-    var allMyLs = $("li");
-    console.log(allMyLs[1]);
-    alert(allMyLs.html());
+    catGifs = $('.cats')
+    catGifs.css({"border-radius": "30px"})
 
-    var deepGif = $('#thats-deep-gif')
-    deepGif.css({"border-radius": "30px", "width": "50%"})
+    codeup = $('.codeup')
+    codeup.css({'border': '3px solid red', 'border-radius': '30px'})
+
+    $('li').css({"font-size": "20px"})
+
+    stuff = $('h1, p, li')
+    console.log(stuff)
+    stuff.css({"background-color": "yellow"})
+
+
+
 });
 // var quotes = $('#my-fav-quotes')
 // console.log(quotes);
