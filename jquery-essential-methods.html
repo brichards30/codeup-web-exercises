@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--<h1>Essential Oils</h1>-->
+
+<main>
+
+
+</main>
+
+<script src="js/jquery-2.x-git.js"></script>
+
+<script>
+    //JS
+    "use strict"
+    $(document).ready(function () {
+
+        $('main').html('<h1>Essential Oils</h1>')
+
+        var mainCurrentHTML = $('main').html()
+
+        $('main').html(mainCurrentHTML + '<p>I will not overwrite the contents above</p>');
+
+
+
+        var headerValue = $('h1').html('Essential Methods').css({'background-color': 'red'})
+
+        console.log(headerValue);
+
+
+        // This is dynamically generating the html page's contents
+
+
+    })
+</script>
+</body>
+</html>
+<!--Don't edit the body of HTML which could potentially override everything else-->
