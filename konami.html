@@ -107,9 +107,9 @@
         $('h1').css('visibility', 'hidden')
         $('#busted').css('visibility', 'visible')
         var cheaterSound = new Audio('audio/cheater.wav');
-        cheaterSound.play();
+        cheaterSound.play([0]);
         var jailCellSound = new Audio('audio/jailcell.wav');
-        jailCellSound.play()
+        jailCellSound.play([1]);
         $('.cheater-gif').css('visibility', 'visible');
         alert('LOOK AT YOU, OUT HERE CHEATING!');
     }
