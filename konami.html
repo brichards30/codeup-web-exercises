@@ -8,6 +8,7 @@
 
 
     <style>
+
         @font-face {
             font-family: 'Pricedown';
             src: url('./css/pricedown.ttf') format('truetype');
@@ -15,32 +16,34 @@
 
         .cheater-gif {
             width: 75%;
-            visibility: hidden;
-
+            visibility: hidden;;
         }
 
         * {
             background-color: green;
-
         }
 
         #busted {
             color: white;
             font-family: 'Pricedown';
             visibility: hidden;
-            font-size: 75px;
+            font-size: 90px;
             text-align: center;
-            margin: 50px;
+            margin: 0;
         }
 
         h1 {
             text-align: center;
             font-family: 'Acme', sans-serif;
+            font-size: 70px;
+            margin: 0;
         }
 
     </style>
 </head>
 <body>
+
+
 <h1>Konami Code</h1>
 
 <p id="busted">BUSTED!</p>
@@ -61,7 +64,7 @@
         //variable to hold the current position of the code as it is being entered
         var konamiCurrentPosition;
 
-        //this might've been excessive since e.keyCode stopped working
+        // keys by their keyCode via keycode.info
         konamiKeys = {
             13: 'enter',
             37: 'left',
@@ -78,7 +81,7 @@
 
         //whenever a key is pressed
         $(document).keydown(function (event) {
-            //variable to hold the determined keys by their keyCode via keycode.info
+            //variable to hold the determined keys by their keyCode
             var enteredKeys = konamiKeys[event.keyCode];
             //variable to hold the current value of the key from konamiCode variable
             var keyValue = konamiCode[konamiCurrentPosition];
@@ -108,7 +111,7 @@
         var jailCellSound = new Audio('audio/jailcell.wav');
         jailCellSound.play()
         $('.cheater-gif').css('visibility', 'visible');
-        alert('LOOK AT YOU! OUT HERE CHEATING!');
+        alert('LOOK AT YOU, OUT HERE CHEATING!');
     }
 </script>
 </body>
