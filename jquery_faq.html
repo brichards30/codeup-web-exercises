@@ -7,6 +7,7 @@
         .invisible {
             visibility: hidden;
         }
+
         dd {
             font-style: oblique;
         }
@@ -14,9 +15,11 @@
         dt {
             font-size: larger;
         }
+
         img {
             width: 30%;
         }
+
         h1 {
             text-align: center;
             font-family: 'Athelas';
@@ -30,60 +33,115 @@
 <h1>National Parks FAQs</h1>
 
 
-<dl id="natl-parks-faqs">
-    <dt>What government agency oversees the National Park Service?</dt>
-    <br>
-    <dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is
-        the department's Assistant Secretary for Fish, Wildlife and Parks.
-    </dd>
-    <br>
-    <dt>How many employees are in the National Park Service?</dt>
-    <br>
-    <dd>Permanent, temporary, and seasonal employees: Approximately 20,000. Volunteers: over 200,000.</dd>
-    <br>
-    <dt>When was the National Park System created?</dt>
-    <br>
-    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
-    <br>
-    <dt>What is the most-visited national park?</dt>
-    <br>
-    <dd>Blue Ridge Parkway.</dd>
-    <br>
-    <dt>How many people visit the national parks?</dt>
-    <br>
-    <dd>In 2019, 327,516,619.</dd>
-    <br>
-    <dt>How many areas are in the National Park System?</dt>
-    <br>
-    <dd>The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia,
-        American Samoa, Guam, Puerto Rico, and the Virgin Islands.
-    </dd>
-</dl>
+<!--<dl id="natl-parks-faqs">-->
+<!--    <dt>What government agency oversees the National Park Service?</dt>-->
+<!--    <br>-->
+<!--    <dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is-->
+<!--        the department's Assistant Secretary for Fish, Wildlife and Parks.-->
+<!--    </dd>-->
+<!--    <br>-->
+<!--    <dt>How many employees are in the National Park Service?</dt>-->
+<!--    <br>-->
+<!--    <dd>Permanent, temporary, and seasonal employees: Approximately 20,000. Volunteers: over 200,000.</dd>-->
+<!--    <br>-->
+<!--    <dt>When was the National Park System created?</dt>-->
+<!--    <br>-->
+<!--    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>-->
+<!--    <br>-->
+<!--    <dt>What is the most-visited national park?</dt>-->
+<!--    <br>-->
+<!--    <dd>Blue Ridge Parkway.</dd>-->
+<!--    <br>-->
+<!--    <dt>How many people visit the national parks?</dt>-->
+<!--    <br>-->
+<!--    <dd>In 2019, 327,516,619.</dd>-->
+<!--    <br>-->
+<!--    <dt>How many areas are in the National Park System?</dt>-->
+<!--    <br>-->
+<!--    <dd>The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia,-->
+<!--        American Samoa, Guam, Puerto Rico, and the Virgin Islands.-->
+<!--    </dd>-->
+<!--</dl>-->
 
-<a href="#" id="reveal-answers">Click to toggle the answers.</a>
-<br>
+<!--<a href="#" id="reveal-answers">Click to toggle the answers.</a>-->
+<!--<br>-->
 
-<img src="https://media.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif" alt="nature">
+<!--<img src="https://media.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif" alt="nature">-->
 
-<script src="js/jquery-2.x-git.js"></script>
+<!--TRAVERSING EXERCISE-->
+<h3 class="parkHeaders">Cane River Creole</h3>
+<ul id="cane-river-creole">
+    <li>Located in Natchitoches, LA</li>
+    <li>Oakland and Magnolia Plantations are two of the most intact Creole cotton plantations in the United States</li>
+    <li>Today, nearly 60 historic buildings of Oakland Plantation remain</li>
+    <li>Eight cabins of the Magnolia Plantation Quarters have survived.</li>
+</ul>
 
-<script>
-    'use strict'
-    $(document).ready(function () {
-        //adds class of invisible. Used inline stylesheet to add visibility:hidden
-       $('dd').addClass('invisible');
+<h3 class="parkHeaders">Martin Luther King, Jr. National Historical Park</h3>
+<ul id="mlk-park">
+    <li>Located at his childhood home in Atlanta, GA</li>
+    <li>Includes locations where Dr. King was born, lived, worked, worshipped, and is buried.</li>
+    <li>Ebenezer Baptist Church, where Dr. King was baptized, was restored in 2001.</li>
+    <li>In March 1992, the Martin Luther King, Jr. "I Have a Dream" World Peace Rose Garden was planted.
+    </li>
+</ul>
 
-       //created link to toggle the answers
-        $("#reveal-answers").click(function(){
-            $('dd').toggleClass('invisible');
-        })
-        //highlighted all dts using the same function as above except highlights the individual dt that is clicked
-        $('dt').click(function(){
-           $(this).css({'background-color': 'yellow'});
-        })
 
-    });
+<h3 class="parkHeaders">Great Smoky Mountains</h3>
+    <ul id="great-smoky">
+        <li>Spans North Carolina and Tennessee</li>
+        <li>African American Experience Project was started in 2018 to document the African American experience</li>
+        <li>The Walker sisters, received a special lifetime lease—a chance to live
+            out the rest of their lives in the log cabin they were raised in, even after the creation of a national park
+            which saw hundreds of families leave the mountain areas.
+        </li>
+        <li>Great Smoky Mountains National Park monitors six vital signs: Air Quality, Soil Quality, Water Quality,
+            Climate Changes, Vegetation Communities, and Aquatic Communities.
+        </li>
+    </ul>
 
-</script>
+
+    <button class="last-child-highlighted">CLICK ME TO SEE SOMETHING COOL</button>
+
+
+    <script src="js/jquery-2.x-git.js"></script>
+
+    <script>
+        'use strict'
+        $(document).ready(function () {
+            // //adds class of invisible. Used inline stylesheet to add visibility:hidden
+            // $('dd').addClass('invisible');
+            //
+            // //created link to toggle the answers
+            // $("#reveal-answers").click(function () {
+            //     $('dd').toggleClass('invisible');
+            // })
+            // //highlighted all dts using the same function as above except highlights the individual dt that is clicked
+            // $('dt').click(function () {
+            //     $(this).css({'background-color': 'yellow'});
+            // })
+
+            $('.last-child-highlighted').click(function(){
+                $('ul').each(function() {
+                    $(this).children().last().css({'background-color': 'yellow'})
+                    })
+                })
+
+            $('h3').click(function() {
+                $(this).next().css({'font-weight': 'bold'})
+                })
+
+            $('li').click(function () {
+                    $(this).parent().children().first().css({'color': 'blue'})
+                })
+
+            })
+
+
+
+
+
+
+    </script>
 </body>
 </html>
