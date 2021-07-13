@@ -7,9 +7,6 @@
         .invisible {
             visibility: hidden;
         }
-        .highlighted {
-            background-color: yellow;
-        }
         dd {
             font-style: oblique;
         }
@@ -80,9 +77,9 @@
         $("#reveal-answers").click(function(){
             $('dd').toggleClass('invisible');
         })
-        //highlighted all dts using the same function as above
+        //highlighted all dts using the same function as above except highlights the individual dt that is clicked
         $('dt').click(function(){
-           $(this).toggleClass('highlighted');
+           $(this).css({'background-color': 'yellow'});
         })
 
     });
