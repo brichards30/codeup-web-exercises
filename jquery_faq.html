@@ -73,10 +73,14 @@
 <script>
     'use strict'
     $(document).ready(function () {
+        //adds class of invisible. Used inline stylesheet to add visibility:hidden
        $('dd').addClass('invisible');
+
+       //created link to toggle the answers
         $("#reveal-answers").click(function(){
             $('dd').toggleClass('invisible');
         })
+        //highlighted all dts using the same function as above
         $('dt').click(function(){
            $('dt').toggleClass('highlighted');
         })
