@@ -87,7 +87,6 @@
 </ul>
 
 
-
 <h3 class="parkHeaders">Great Smoky Mountains</h3>
 <ul id="great-smoky">
     <li>Spans North Carolina and Tennessee</li>
@@ -110,32 +109,38 @@
 <script>
     'use strict'
     $(document).ready(function () {
-        // //adds class of invisible. Used inline stylesheet to add visibility:hidden
-        // $('dd').addClass('invisible');
-        //
-        // //created link to toggle the answers
-        // $("#reveal-answers").click(function () {
-        //     $('dd').toggleClass('invisible');
-        // })
-        // //highlighted all dts using the same function as above except highlights the individual dt that is clicked
-        // $('dt').click(function () {
-        //     $(this).css({'background-color': 'yellow'});
-        // })
+        /* Attributes & CSS exercises
+        adds class of invisible. Used inline stylesheet to add visibility:hidden
+        $('dd').addClass('invisible');
 
+        //created link to toggle the answers
+        $("#reveal-answers").click(function () {
+            $('dd').toggleClass('invisible');
+        })
+        //highlighted all dts using the same function as above except highlights the individual dt that is clicked
+        $('dt').click(function () {
+            $(this).css({'background-color': 'yellow'});
+        })
+        */
+
+        //Traversing Exercises
         //Exercise.3 Create a button that, when clicked, makes the last li in each ul have a yellow background
         $('.last-child-highlighted').click(function () {
             $('ul').each(function () {
                 $(this).children().last().css({'background-color': 'yellow'})
             })
         })
-//Exercise.4 When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this
+
+        //Exercise.4 When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this
         $('h3').click(function () {
             $(this).next().css({'font-weight': 'bold'})
         })
-//Exercise.5 When any list item is clicked, first li of the parent ul should have a font color of blue
+
+        //Exercise.5 When any list item is clicked, first li of the parent ul should have a font color of blue
         $('li').click(function () {
             $(this).parent().children().first().css({'color': 'blue'})
         })
+
         //Bonus??
 
     })
