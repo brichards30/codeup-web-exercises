@@ -3,31 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Maps</title>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
 
-
-
 <div id='map' style='width: 90vw; height: 90vh;'></div>
+
+
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-  'use strict';
+    'use strict';
+    mapboxgl.accessToken = mapboxAPIKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 15,
+        center: [-98.62337968527251, 29.47199335398013]
+    });
 
-  function geocode(search, mapboxAPIKey) {
-    var baseUrl = 'https://api.mapbox.com';
-    var endPoint = '/geocoding/v5/mapbox.places/';
-    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
-              return res.json();
-              // to get all the data from the request, comment out the following three lines...
-            }).then(function(data) {
-              return data.features[0].center;
-            });
-  }
+    var marker = new mapboxgl.Marker({draggable: true})
+        .setLngLat([-98.62337968527251, 29.47199335398013])
+        .addTo(map);
 
+    var popup = new mapboxgl.Popup()
+        // .setLngLat([-98.45251678925071,29.567244316609294])
+        .setHTML("Sichuan House")
+        // .setMaxWidth("100px")
+        .addTo(map);
+
+
+    marker.setPopup(popup)
+
+
+
+
+    function sichaunHouse(restaurant) {
+
+        geocode(restaurant, mapboxAPIKey).then(function () {
+
+            var sichaunPopup = new mapboxgl.Popup()
+                // .setLngLat([-98.45251678925071,29.567244316609294])
+                .setHTML("<p>Sichaun House</p>")
+                // .setMaxWidth("100px")
+                .addTo(map)
+
+            sichaunPopup.onclick();
+        })
+
+
+    }
 
 
 </script>
