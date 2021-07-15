@@ -20,16 +20,16 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 15,
-        center: [-98.62337968527251, 29.47199335398013]
+        center: [-98.59582785273692, 29.613841057713902]
     });
 
     var marker = new mapboxgl.Marker({draggable: true})
-        .setLngLat([-98.62337968527251, 29.47199335398013])
+        .setLngLat([-98.59582785273692, 29.613841057713902])
         .addTo(map);
 
     var popup = new mapboxgl.Popup()
         // .setLngLat([-98.45251678925071,29.567244316609294])
-        .setHTML("Sichuan House")
+        .setHTML("Ruth's Chris Steakhouse")
         // .setMaxWidth("100px")
         .addTo(map);
 
@@ -41,16 +41,20 @@
         {
             name: 'Sichaun House',
             address: '3505 Wurzbach Rd #103, San Antonio, TX 78238',
+            category: 'Chinese',
+            price: '$$'
         },
-
         {
             name: 'Okinii Sushi & Grill',
-            address: 'Taunusstraße 22, 65183 Wiesbaden, Germany'
-
+            address: 'Taunusstraße 22, 65183 Wiesbaden, Germany',
+            category: 'Sushi',
+            price: '$$$'
         },
         {
             name: 'Chama Guacha',
-            address: '18318 Sonterra Pl, San Antonio, TX 78258'
+            address: '18318 Sonterra Pl, San Antonio, TX 78258',
+            category: 'Steakhouse',
+            price: '$$$$'
         }
 
     ]
@@ -58,17 +62,26 @@
 
     restaurants.forEach(function (restaurant) {
 
-        geocode(restaurant, mapboxAPIKey).then(function (restaurantCoordinates) {
+        geocode(restaurant.address, mapboxAPIKey).then(function (restaurantCoordinates) {
             console.log(restaurantCoordinates);
+
+            var restaurantMarker = new mapboxgl.Marker()
+                .setLngLat(restaurantCoordinates)
+                .addTo(map);
+
             var restaurantPopup = new mapboxgl.Popup()
                 .setLngLat(restaurantCoordinates)
-                .setHTML("<p></p>")
+                .setHTML(`<h4>${restaurant.name}</h4>
+                            <p>${restaurant.address}</p>
+                            <p>${restaurant.category}</p>
+                            <p>${restaurant.price}</p>`)
                 // .setMaxWidth("100px")
                 .addTo(map)
 
-            restaurantPopup(re.onclick();
+            restaurantMarker.setPopup(restaurantPopup)
 
         })
+
     })
 
 
