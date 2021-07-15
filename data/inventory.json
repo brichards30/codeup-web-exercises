@@ -33,15 +33,14 @@
       "tool"
     ],
     "price": 10
-  },
-  {
-    "title": "Wrenches",
-    "quantity": 100,
-    "categories": [
-      "tool"
-    ],
-    "price": 20
-  },
+  },  {
+  "title": "Wrenches",
+  "quantity": 100,
+  "categories": [
+    "tool"
+  ],
+  "price": 20
+},
   {
     "title": "Plunger",
     "quantity": 50,
@@ -51,4 +50,5 @@
     ],
     "price": 3
   }
+
 ]

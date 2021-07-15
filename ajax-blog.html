@@ -20,18 +20,18 @@
 <script>
     $(document).ready(function() {
 
-        $.ajax("data/inventory.json").done(function (data, status) {
-            alert("AJAX call completed successfully!");
-            console.log("Request status: " + status);
-            console.log("Data returned from server:");
-            console.log(data);
-
-            for (let i = 0; i < data.length; i++) {
-                var currentTool = data[i]
-                console.log(currentTool)
-                $("main").append("<p>" + currentTool.title + " " + currentTool.price + "</p><br>");
-            }
-        });
+        // $.ajax("data/inventory.json").done(function (data, status) {
+        //     alert("AJAX call completed successfully!");
+        //     console.log("Request status: " + status);
+        //     console.log("Data returned from server:");
+        //     console.log(data);
+        //
+        //     for (let i = 0; i < data.length; i++) {
+        //         var currentTool = data[i]
+        //         console.log(currentTool)
+        //         $("main").append("<p>" + currentTool.title + " " + currentTool.price + "</p><br>");
+        //     }
+        // });
 
     })
 

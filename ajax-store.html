@@ -19,29 +19,47 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
-<script src="js/jquery-2.x-git.js"</script>
+<button id="refreshToolList">Reload Tool List</button>
+
+<script src="js/jquery-2.x-git.js"></script>
 
 <script>
-    (function () {
+    (function(){
         "use strict";
-        // TODO: Create an AJAX GET request for the file under data/inventory.json
-        <script>
-            $(document).ready(function() {
+        // Create an AJAX GET request for the file under data/inventory.json
+        getData();
 
-            $.ajax("data/inventory.json").done(function (data, status) {
-                alert("AJAX call completed successfully!");
-                console.log("Request status: " + status);
-                console.log("Data returned from server:");
+        function getData() {
+
+
+
+            $.ajax("data/inventory.json").done(function (data) {
+                //alert("AJAX call completed successfully!");
+                // console.log("Request status: " + status);
+                // console.log("Data returned from server:");
                 console.log(data);
+                var html = '';
+                $('#insertProducts').empty();
 
-                for (let i = 0; i < data.length; i++) {
-                    var currentTool = data[i]
-                    console.log(currentTool)
-                    $("main").append("<p>" + currentTool.title + " " + currentTool.price + "</p><br>");
-                }
-            });
+                data.forEach(function(tool) {
+                    console.log(tool);
+                    html = `<tr>
+                            <td>${tool.title}</td>
+                            <td>${tool.quantity}</td>
+                            <td>${tool.price}</td>
+                            <td>${tool.categories}</td>
+                            </tr>`;
 
-        })
+                    $('#insertProducts').append(html)
+                })
+            }).fail(function(error) {
+                console.log('Error object ' + error);
+            })
+        }
+
+        $('#refreshToolList').click(getData);
+
+
             // TODO: Take the data from inventory.json and append it to the products table
             // HINT: Your data should come back as a JSON object; use console.log() to inspect
             // its contents and fields
