@@ -11,6 +11,7 @@
 
 <div id='map' style='width: 90vw; height: 90vh;'></div>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     mapboxgl.accessToken = mapboxAPIKey;
     var map = new mapboxgl.Map({
@@ -35,6 +36,24 @@
         .addTo(map)
 
     marker.setPopup(elCaminoPopup)
+
+    var locationToSearchFor = '300 Alamo Plaza, San Antonio, TX 78205'
+
+    geocode(locationToSearchFor, mapboxAPIKey).then(function (alamoCoordinates) {
+        console.log(`Here are the coordinates for the following location ${locationToSearchFor}`);
+        console.log(alamoCoordinates);
+
+    var alamoMarker = new mapboxgl.Marker()
+        .setLngLat(alamoCoordinates)
+        .addTo(map);
+
+    var alamoPopup = new mapboxgl.Popup()
+        .setHTML("<p>Love Live the Alamo!</p>")
+        .addTo(map)
+
+    alamoMarker.setPopup(alamoPopup)
+
+    })
 
 </script>
 
