@@ -5,38 +5,38 @@
     <title>AJAX Store</title>
 </head>
 <body>
-<h1>Here is the store!</h1>
+<h1>Blog Posts</h1>
 
-<main>
+<div id="posts">
 
-
-
-
-</main>
-
+</div>
 
 
 <script src="js/jquery-2.x-git.js"></script>
 <script>
-    $(document).ready(function() {
+    (function() {
+        "use strict";
 
-        // $.ajax("data/inventory.json").done(function (data, status) {
-        //     alert("AJAX call completed successfully!");
-        //     console.log("Request status: " + status);
-        //     console.log("Data returned from server:");
-        //     console.log(data);
-        //
-        //     for (let i = 0; i < data.length; i++) {
-        //         var currentTool = data[i]
-        //         console.log(currentTool)
-        //         $("main").append("<p>" + currentTool.title + " " + currentTool.price + "</p><br>");
-        //     }
-        // });
+        $.ajax('data/blog.json').done(function (data) {
+            console.log(data);
+            var html = '';
 
-    })
+            data.forEach(function (post) {
+                var categoryStrings = post.categories.join(", ");
+                html = `<div>
+                            <h3>${post.title}</h3>
+                            <h5>${post.date}</h5>
+                            <p>${post.content}</p>
+                            <p>${categoryStrings}</p>
+                            </div>`;
+                $('#posts').append(html);
+            })
 
+        }).fail(function (error) {
+            console.log("Error object: " + error);
+        });
 
-
+    })();
 </script>
 </body>
 </html>
