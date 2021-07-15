@@ -34,26 +34,42 @@
         .addTo(map);
 
 
-    marker.setPopup(popup)
+    marker.setPopup(popup);
 
 
+    var restaurants = [
+        {
+            name: 'Sichaun House',
+            address: '3505 Wurzbach Rd #103, San Antonio, TX 78238',
+        },
+
+        {
+            name: 'Okinii Sushi & Grill',
+            address: 'Taunusstraße 22, 65183 Wiesbaden, Germany'
+
+        },
+        {
+            name: 'Chama Guacha',
+            address: '18318 Sonterra Pl, San Antonio, TX 78258'
+        }
+
+    ]
 
 
-    function sichaunHouse(restaurant) {
+    restaurants.forEach(function (restaurant) {
 
-        geocode(restaurant, mapboxAPIKey).then(function () {
-
-            var sichaunPopup = new mapboxgl.Popup()
-                // .setLngLat([-98.45251678925071,29.567244316609294])
-                .setHTML("<p>Sichaun House</p>")
+        geocode(restaurant, mapboxAPIKey).then(function (restaurantCoordinates) {
+            console.log(restaurantCoordinates);
+            var restaurantPopup = new mapboxgl.Popup()
+                .setLngLat(restaurantCoordinates)
+                .setHTML("<p></p>")
                 // .setMaxWidth("100px")
                 .addTo(map)
 
-            sichaunPopup.onclick();
+            restaurantPopup(re.onclick();
+
         })
-
-
-    }
+    })
 
 
 </script>
