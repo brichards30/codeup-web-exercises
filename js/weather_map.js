@@ -11,19 +11,19 @@ $(document).ready(function () {
             if (index < 5) {
                 console.log(day);
 
-                var weatherCards = `<div class="card" id="card1" style="width: 18rem;">
+                var weatherCards = `<div class="card" style="width: 18rem;">
         <div class="card-header">
         <!--figure out how to get just the day minus the GMT info-->      
             ${new Date(day.dt * 1000)}
         </div>
         <ul class="list-group list-group-flush">
-            <li class=list-group-item>${day.temp.min}/${day.temp.max}</li>
+            <li class=list-group-item id="temps">${day.temp.min}&#8457/${day.temp.max}&#8457</li>
             <li class="list-group-item" id="icons"><img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png"></li>
-            <li class="list-group-item">Description: ${day.weather[0].description} <br>
-                Humidity: ${day.humidity}
+            <li class="list-group-item">Description: <strong>${day.weather[0].description}</strong> <br>
+                Humidity: <strong>${day.humidity}&#37</strong>
             </li>
-            <li class="list-group-item">Wind: ${day.wind_speed}</li>
-            <li class="list-group-item">Pressure: ${day.pressure}</li>
+            <li class="list-group-item">Wind: <strong>${day.wind_speed.toFixed()}</strong></li>
+            <li class="list-group-item">Pressure: <strong>${day.pressure}</strong></li>
         </ul>
     </div>`
                 $('#cardHolder').append(weatherCards);

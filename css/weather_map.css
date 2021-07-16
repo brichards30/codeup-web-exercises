@@ -1,3 +1,13 @@
 .navbar-item {
     color: white;
+
+}
+#temps {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+}
+#icons {
+    display: flex;
+    justify-content: center;
 }
