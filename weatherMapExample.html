@@ -17,7 +17,8 @@
         $.get(`https://api.openweathermap.org/data/2.5/weather`, {
             appid: openWeatherAPIKey,
             q: "San Antonio, US",
-            units: "imperial"
+            units: "imperial",
+            exclude: "minutely, hourly"
         });
 
     })

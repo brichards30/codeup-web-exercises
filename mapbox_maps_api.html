@@ -19,17 +19,17 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 15,
-        center: [-98.59582785273692, 29.613841057713902]
+        zoom: 10,
+        center: [-98.491142, 29.424349]
     });
 
     var marker = new mapboxgl.Marker({draggable: true})
-        .setLngLat([-98.59582785273692, 29.613841057713902])
+        .setLngLat([-98.491142, 29.424349])
         .addTo(map);
 
     var popup = new mapboxgl.Popup()
         // .setLngLat([-98.45251678925071,29.567244316609294])
-        .setHTML("Ruth's Chris Steakhouse")
+        //.setHTML("Ruth's Chris Steakhouse")
         // .setMaxWidth("100px")
 
 

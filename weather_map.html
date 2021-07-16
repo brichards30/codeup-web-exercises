@@ -11,95 +11,23 @@
 
 </head>
 <body>
-
-
+<!--Header/Navigation Bar, need to make current city text white-->
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Weather App</a>
-    <!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--            <span class="navbar-toggler-icon"></span>-->
-    <!--        </button>-->
     <div class="navbar-item">Current City: San Antonio</div>
-
-<!--    <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">-->
-<!--        <ul class="navbar-nav mr-auto">-->
-<!--            <li class="nav-item">-->
-<!--                Current City: San Antonio-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
 </nav>
 
+<!--placeholder for the searchbar and button-->
 <div id="searchBar">
     <label for="search">Place</label>
     <input id="search" type="text" name="search" placeholder="Enter Place of Interest">
     <button type="submit" class="btn-primary">Find</button>
-    
+
 </div>
 
-<div class="row justify-content-between">
-    <div class="card" id="card1" style="width: 18rem;">
-        <div class="card-header">
-            2021-07-16
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <br>
-                Humidity:
-            </li>
-            <li class="list-group-item">Wind: </li>
-            <li class="list-group-item">Pressure: </li>
-        </ul>
-    </div>
-    <div class="card" id="card2" style="width: 18rem;">
-        <div class="card-header">
-            2021-07-17
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <br>
-                Humidity:
-            </li>
-            <li class="list-group-item">Wind: </li>
-            <li class="list-group-item">Pressure: </li>
-        </ul>
-    </div>
-    <div class="card" id="card3" style="width: 18rem;">
-        <div class="card-header">
-            2021-07-18
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <br>
-                Humidity:
-            </li>
-            <li class="list-group-item">Wind: </li>
-            <li class="list-group-item">Pressure: </li>
-        </ul>
-    </div>
-    <div class="card" id="card4" style="width: 18rem;">
-        <div class="card-header">
-            2021-07-19
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <br>
-                Humidity:
-            </li>
-            <li class="list-group-item">Wind: </li>
-            <li class="list-group-item">Pressure: </li>
-        </ul>
-    </div>
-    <div class="card" id="card5" style="width: 18rem;">
-        <div class="card-header">
-            2021-07-20
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <br>
-                Humidity:
-            </li>
-            <li class="list-group-item">Wind: </li>
-            <li class="list-group-item">Pressure: </li>
-        </ul>
-    </div>
-</div>
+<div class="row justify-content-around" id="cardHolder"></div>
 
-<div id='map' style='width: 90vw; height: 90vh;'></div>
+<div id='map' style='width: 100vw; height: 40vh;'></div>
 
 
 <!--Bootstrap & JQuery from starter template-->
@@ -112,62 +40,13 @@
 
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather_map.js"></script>
 
 
-<script>
 
-        mapboxgl.accessToken = mapboxAPIKey;
-        var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-
-        var marker = new mapboxgl.Marker()
-        .setLngLat([-98.48158171595476, 29.4356509220096])
-        .addTo(map);
-
-        var popup = new mapboxgl.Popup()
-        .setLngLat([-98.48158171595476, 29.4356509220096])
-        .setHTML("<h4>El Camino</h4><p>It's a vibe</p>")
-        // .setMaxWidth('100px')
-        .addTo(map)
-
-        var elCaminoPopup = new mapboxgl.Popup()
-        .setHTML("<p>El Camino Is a Vibe!</p>")
-        .addTo(map)
-
-        marker.setPopup(elCaminoPopup)
-
-        var locationToSearchFor = '300 Alamo Plaza, San Antonio, TX 78205'
-
-        geocode(locationToSearchFor, mapboxAPIKey).then(function (alamoCoordinates) {
-        console.log(`Here are the coordinates for the following location ${locationToSearchFor}`);
-        console.log(alamoCoordinates);
-
-        var alamoMarker = new mapboxgl.Marker()
-        .setLngLat(alamoCoordinates)
-        .addTo(map);
-
-        var alamoPopup = new mapboxgl.Popup()
-        .setHTML("<p>Love Live the Alamo!</p>")
-        .addTo(map)
-
-        alamoMarker.setPopup(alamoPopup)
-
-    })
-    'use strict';
-
-    $(document).ready(function () {
-        $.get(`https://api.openweathermap.org/data/2.5/weather`, {
-            appid: openWeatherAPIKey,
-            q: "San Antonio, US",
-            units: "imperial"
-        })
-        })
 
 
 </script>
 </body>
 </html>
+
