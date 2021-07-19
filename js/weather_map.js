@@ -1,23 +1,25 @@
 'use strict';
 
 $(document).ready(function () {
+    //global variables for long/lat
     var mapLong = -98.4916;
     var mapLat = 29.4252;
 
+
+    //grab weather using onecall
     function getWeather() {
         $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
             appid: openWeatherAPIKey,
             lat: mapLat,
             lon: mapLong,
             units: "imperial"
-        }).done(function (data) {
-            $('#cardHolder').html('');
+        }).done(function (data) { //after getting the weather, this is applying to the cards
+            $('#cardHolder').html(''); //need to create this first so when I can append later
 
             data.daily.forEach(function (day, index) {
                 if (index < 5) {
                     console.log(day);
-
-
+                    //cards with info. Used bootstrap card template
                     var weatherCards = `<div class="card" style="width: 18rem;">
         <div class="card-header">
         <!--figure out how to get just the day minus the GMT info-->      
@@ -53,22 +55,35 @@ $(document).ready(function () {
         .setLngLat([mapLong, mapLat])
         .addTo(map);
 
-    function onDragEnd() {
+    function onDragEnd() { //move marker and collect new coordinates for where ever the marker drops
         var lngLat = marker.getLngLat();
+
+        reverseGeocode(lngLat,mapboxAPIKey).then(function(result) {
+            $('#currentCity').html('Current City: ' + result);
+            marker
+                .setLngLat([mapLong, mapLat])
+
+            map.flyTo({
+                center:[mapLong, mapLat],
+                essential: true
+            })
+        });
         mapLong = lngLat.lng
         mapLat = lngLat.lat
         getWeather();
     }
 
+//
     marker.on('dragend', onDragEnd);
     getWeather();
 
 
+//Find button goes to User's requested
     $('#findButton').click(function (e) {
         e.preventDefault();
         var location = $('#search').val();
         var lngLat = marker.getLngLat();
-        $('#currentCity').html('Current City: ' + location[0].toUpperCase() + location.substr(1));
+        $('#currentCity').html('Current City: ' + location[0].toUpperCase() + location.substr(1)); //change Current City to reflect search
 
         geocode(location, mapboxAPIKey).then(function(result) {
             console.log(result);
@@ -84,27 +99,9 @@ $(document).ready(function () {
 
         });
         getWeather();
-        // var lngLat = marker.getLngLat()
-        // $.ajax('https://api.mapbox.com/geocoding/v5/mapbox.places/' + userInput + '.json?access_token=pk.eyJ1IjoiYnJpY2hhcmRzMzAzMCIsImEiOiJja3I1MXNjZG4wYzU4MnJyMmMybGVucTdzIn0.wdkC1CrWYC3_yfl1XCJTCw').done(function (data){
-        //     console.log(data.features[0].center);
-        //     mapLong = data.features[0].center[0];
-        //     mapLat = data.features[0].center[1];
-        //     getWeather();
+    )}
+)}
 
-
-            //Step 1: Get Lat/Lng from data
-            //Step 2: Move map to new lat/lng received from data
-            //Step 3: call getWeather
-        })
-
-
-    })
-//     map.addControl(
-//         new MapboxGeocoder({
-//             accessToken: mapboxAPIKey,
-//             mapboxgl: mapboxgl
-//         })
-//     );
 //
 //     //search included on map
 // }) //end of document.ready

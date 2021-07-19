@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Pricedown';
+    src: url('css/pricedown.ttf') format('truetype');
+}
+
 .navbar-item {
     color: white;
 
@@ -10,4 +15,12 @@
 #icons {
     display: flex;
     justify-content: center;
+}
+.card-header {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+#searchBar {
+    padding: 2em;
 }
