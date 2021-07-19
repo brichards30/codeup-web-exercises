@@ -7,21 +7,31 @@
     <link rel="stylesheet" href="css/weather_map.css"/>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
 
     <title>Weather Map Project</title>
+
+    <style>
+        @font-face {
+            font-family: 'Pricedown';
+            src: url('./css/pricedown.ttf') format('truetype');
+        }
+    </style>
 
 </head>
 <body>
 <!--Header/Navigation Bar, need to make current city text white-->
-<nav class="navbar navbar-dark bg-light">
-    <a class="navbar-brand text-primary" id="appName" href="#">Weather App</a>
-    <div class="navbar-item text-primary" id="currentCity">Current City: San Antonio</div>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-light" id="appName" href="#">Weather App</a>
+    <div class="navbar-item text-light " id="currentCity">Current City: San Antonio</div>
 </nav>
 
 <!--placeholder for the searchbar and button-->
 <div id="searchBar">
     <input id="search" type="text" name="search" placeholder="Enter Place of Interest">
-    <button type="submit" class="btn-primary" id="findButton">Find</button>
+    <button type="submit" class="btn-dark text-light" id="findButton">Find</button>
 
 </div>
 

@@ -1,11 +1,19 @@
-@font-face {
+#searchBar {
+    padding: 2em;
+}
+#currentCity {
     font-family: 'Pricedown';
-    src: url('css/pricedown.ttf') format('truetype');
+    font-size: x-large;
+}
+#appName {
+    font-family: 'Pricedown';
+    font-size: xxx-large;
 }
 
-.navbar-item {
-    color: #ffffff;
 
+
+#cards:hover {
+    box-shadow: 0px 10px 50px rgb(0, 2, 12);
 }
 #temps {
     display: flex;
@@ -21,6 +29,5 @@
     justify-content: center;
     font-weight: bold;
 }
-#searchBar {
-    padding: 2em;
-}
+
+

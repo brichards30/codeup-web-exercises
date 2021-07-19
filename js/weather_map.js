@@ -20,7 +20,7 @@ $(document).ready(function () {
                 if (index < 5) {
                     console.log(day);
                     //cards with info. Used bootstrap card template
-                    var weatherCards = `<div class="card bg-light text-dark" style="width: 18rem;">
+                    var weatherCards = `<div class="card bg-light text-dark" id="cards" style="width: 18rem;">
         <div class="card-header">
         <!--figure out how to get just the day minus the GMT info-->      
             ${new Date(day.dt * 1000).toDateString()}
@@ -35,7 +35,7 @@ $(document).ready(function () {
             <li class="list-group-item">Pressure: <strong>${day.pressure}</strong></li>
         </ul>
     </div>`
-                    $('#cardHolder').append(weatherCards);
+                    $('#cardHolder').append(weatherCards); //add data onto cards, use template and fori loop to get the cards to populate
 
                 }
             })
