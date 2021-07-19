@@ -20,7 +20,7 @@ $(document).ready(function () {
                 if (index < 5) {
                     console.log(day);
                     //cards with info. Used bootstrap card template
-                    var weatherCards = `<div class="card" style="width: 18rem;">
+                    var weatherCards = `<div class="card bg-light text-primary" style="width: 18rem;">
         <div class="card-header">
         <!--figure out how to get just the day minus the GMT info-->      
             ${new Date(day.dt * 1000).toDateString()}
@@ -36,6 +36,7 @@ $(document).ready(function () {
         </ul>
     </div>`
                     $('#cardHolder').append(weatherCards);
+
                 }
             })
         })
@@ -58,13 +59,13 @@ $(document).ready(function () {
     function onDragEnd() { //move marker and collect new coordinates for where ever the marker drops
         var lngLat = marker.getLngLat();
 
-        reverseGeocode(lngLat,mapboxAPIKey).then(function(result) {
+        reverseGeocode(lngLat, mapboxAPIKey).then(function (result) {
             $('#currentCity').html('Current City: ' + result);
             marker
                 .setLngLat([mapLong, mapLat])
 
             map.flyTo({
-                center:[mapLong, mapLat],
+                center: [mapLong, mapLat],
                 essential: true
             })
         });
@@ -85,7 +86,7 @@ $(document).ready(function () {
         var lngLat = marker.getLngLat();
         $('#currentCity').html('Current City: ' + location[0].toUpperCase() + location.substr(1)); //change Current City to reflect search
 
-        geocode(location, mapboxAPIKey).then(function(result) {
+        geocode(location, mapboxAPIKey).then(function (result) {
             console.log(result);
             mapLong = result[0];
             mapLat = result[1];
@@ -99,8 +100,8 @@ $(document).ready(function () {
 
         });
         getWeather();
-    )}
-)}
+    })
+})
 
 //
 //     //search included on map
