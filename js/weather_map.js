@@ -5,6 +5,44 @@ $(document).ready(function () {
     var mapLong = -98.4916;
     var mapLat = 29.4252;
 
+    //establish new map
+    mapboxgl.accessToken = mapboxAPIKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [mapLong, mapLat],
+        zoom: 15
+    });
+//add marker and make it draggable
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([mapLong, mapLat])
+        .addTo(map);
+
+    function onDragEnd() { //move marker and collect new coordinates for where ever the marker drops
+        var lngLat = marker.getLngLat();
+
+
+        reverseGeocode(lngLat, mapboxAPIKey).then(function (result) {
+            $('#currentCity').html('Current City: ' + result);
+            marker
+                .setLngLat([mapLong, mapLat])
+
+            map.flyTo({
+                center: [mapLong, mapLat],
+                essential: true
+            })
+
+        });
+        mapLong = lngLat.lng
+        mapLat = lngLat.lat
+        getWeather();
+    }
+
+
+
+
 
     //grab weather using onecall
     function getWeather() {
@@ -26,9 +64,9 @@ $(document).ready(function () {
             ${new Date(day.dt * 1000).toDateString()}
         </div>
         <ul class="list-group list-group-flush">
-            <li class=list-group-item id="temps">${day.temp.min}&#8457/${day.temp.max}&#8457</li>
+            <li class=list-group-item id="temps">${day.temp.min.toFixed()}&#8457/${day.temp.max.toFixed()}&#8457</li>
             <li class="list-group-item" id="icons"><img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png"></li>
-            <li class="list-group-item">Description: <strong>${day.weather[0].description}</strong> <br>
+            <li class="list-group-item">Description: <strong><em>${day.weather[0].description}</em></strong> <br>
                 Humidity: <strong>${day.humidity}&#37</strong>
             </li>
             <li class="list-group-item">Wind: <strong>${day.wind_speed.toFixed()}</strong></li>
@@ -42,37 +80,7 @@ $(document).ready(function () {
         })
     }
 
-    mapboxgl.accessToken = mapboxAPIKey;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [mapLong, mapLat],
-        zoom: 10
-    });
 
-    var marker = new mapboxgl.Marker({
-        draggable: true
-    })
-        .setLngLat([mapLong, mapLat])
-        .addTo(map);
-
-    function onDragEnd() { //move marker and collect new coordinates for where ever the marker drops
-        var lngLat = marker.getLngLat();
-
-        reverseGeocode(lngLat, mapboxAPIKey).then(function (result) {
-            $('#currentCity').html('Current City: ' + result);
-            marker
-                .setLngLat([mapLong, mapLat])
-
-            map.flyTo({
-                center: [mapLong, mapLat],
-                essential: true
-            })
-        });
-        mapLong = lngLat.lng
-        mapLat = lngLat.lat
-        getWeather();
-    }
 
 //
     marker.on('dragend', onDragEnd);
@@ -94,6 +102,8 @@ $(document).ready(function () {
             marker
                 .setLngLat([mapLong, mapLat])
             map.flyTo({
+                speed: 0.5,
+                curve: 1,
                 center: [mapLong, mapLat],
                 essential: true
             })
@@ -101,8 +111,10 @@ $(document).ready(function () {
         });
         getWeather();
     })
-})
+    map.dragRotate.disable();
 
-//
-//     //search included on map
-// }) //end of document.ready
+// disable map rotation using touch rotation gesture
+    map.touchZoomRotate.disableRotation();
+})
+//end of document.ready
+

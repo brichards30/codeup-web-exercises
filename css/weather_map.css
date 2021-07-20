@@ -1,5 +1,5 @@
 #searchBar {
-    padding: 2em;
+    padding: .5em;
 }
 #currentCity {
     font-family: 'Pricedown';
@@ -10,7 +10,9 @@
     font-size: xxx-large;
 }
 
-
+#cards {
+    margin-bottom: .5em;
+}
 
 #cards:hover {
     box-shadow: 0px 10px 50px rgb(0, 2, 12);
