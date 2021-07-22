@@ -38,5 +38,14 @@ const users = [
     }
 ];
 
-var languages = users.filter(function(lang) {
-    return
+//2. Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
+const languages = users.filter(user => user.languages.length >= 3)
+console.log(languages);
+
+//3. Use .map to create an array of strings where each element is a user's email address
+const email = users.map(user => user.email);
+console.log(email);
+
+
+
+
