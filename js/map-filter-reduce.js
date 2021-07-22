@@ -55,6 +55,13 @@ console.log(totalExperience);
 
 console.log(totalExperience / users.length);
 
+//5. Use .reduce to get the longest email from the list of users.
+
+const longestEmail = users.reduce((currentLongest, user) => {
+    if (user.email.length > currentLongest.email.length)
+},users[0])
+
+
 
 
 
