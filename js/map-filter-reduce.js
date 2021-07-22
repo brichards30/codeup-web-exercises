@@ -46,6 +46,16 @@ console.log(languages);
 const email = users.map(user => user.email);
 console.log(email);
 
+//4. Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+
+const totalExperience = users.reduce((experience, users) => {
+    return experience + users.yearsOfExperience;
+}, 0);
+console.log(totalExperience);
+
+console.log(totalExperience / users.length);
+
+
 
 
 
