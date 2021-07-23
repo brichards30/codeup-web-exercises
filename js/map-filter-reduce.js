@@ -59,7 +59,8 @@ console.log(totalExperience / users.length);
 
 const longestEmail = users.reduce((currentLongest, user) => {
     if (user.email.length > currentLongest.email.length)
-},users[0])
+
+)}, users[0])
 
 
 
